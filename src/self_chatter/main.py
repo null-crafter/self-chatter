@@ -172,7 +172,8 @@ def chat(verbose):
 
 
 @cli.command(help="Create a post using the online persona's tone.")
-def post():
+@click.option("--verbose", default=False, help="verbose output (default: False)")
+def post(verbose):
     with sqlmodel.Session(engine) as session:
         count = session.exec(
             sqlmodel.select(sqlmodel.func.count(sqlmodel.col(Text.id)))
@@ -198,6 +199,8 @@ def post():
         ("system", system_message),
         ("human", "Create a new post in the same tone and style as the old posts."),
     ]
+    if verbose:
+        click.echo(messages)
     llm = ChatOllama(model=config.get("chat_model", "llama3.2"))
     resp = llm.invoke(messages)
     click.echo(resp.content)
