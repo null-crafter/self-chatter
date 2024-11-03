@@ -25,6 +25,7 @@ attrs==24.2.0
     # via aiohttp
 beautifulsoup4==4.12.3
     # via bs4
+black==24.10.0
 blurhash==1.1.4
     # via mastodon-py
 bs4==0.0.2
@@ -36,6 +37,7 @@ certifi==2024.8.30
 charset-normalizer==3.4.0
     # via requests
 click==8.1.7
+    # via black
     # via self-chatter
 dataclasses-json==0.6.7
     # via langchain-community
@@ -63,6 +65,7 @@ idna==3.10
     # via httpx
     # via requests
     # via yarl
+isort==5.13.2
 jsonpatch==1.33
     # via langchain-core
 jsonpointer==3.0.0
@@ -95,6 +98,7 @@ multidict==6.1.0
     # via aiohttp
     # via yarl
 mypy-extensions==1.0.0
+    # via black
     # via typing-inspect
 numpy==1.26.4
     # via langchain
@@ -105,10 +109,15 @@ ollama==0.3.3
 orjson==3.10.11
     # via langsmith
 packaging==24.1
+    # via black
     # via langchain-core
     # via marshmallow
 pandas==2.2.3
     # via self-chatter
+pathspec==0.12.1
+    # via black
+platformdirs==4.3.6
+    # via black
 propcache==0.2.0
     # via yarl
 pydantic==2.9.2
