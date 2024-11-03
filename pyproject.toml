@@ -1,0 +1,40 @@
+[project]
+name = "self-chatter"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "null crafter", email = "163591881+null-crafter@users.noreply.github.com" }
+]
+dependencies = [
+    "click>=8.1.7",
+    "tomli-w>=1.1.0",
+    "mastodon-py>=1.8.1",
+    "sqlmodel>=0.0.22",
+    "bs4>=0.0.2",
+    "lxml>=5.3.0",
+    "duckdb>=1.1.2",
+    "langchain>=0.3.7",
+    "langchain-community>=0.3.5",
+    "langchain-ollama>=0.2.0",
+    "httpx[socks]>=0.27.2",
+    "pandas>=2.2.3",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+self-chatter = "self_chatter.main:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/self_chatter"]
